@@ -1,0 +1,70 @@
+.left_news_wrap
+	width: 100%
+	margin-bottom: 20px
+.left_news_top_wrap
+	width: 100%
+	display: flex
+	box-sizing: border-box
+	border: 1px solid darken($grayLight, 5%)
+.left_news_top_title
+	width: 100%
+	text-align: center
+	font-size: 1.15em
+	color: #1d2029
+	margin: 0
+	padding: 10px 0 7px 0
+	border-right: 1px solid darken($grayLight, 5%)
+	background-color: $grayLight
+
+.left_news_top_link
+	width: 100%
+	a
+		display: block
+		height: 100%
+		text-align: center
+		color: $accent
+		padding: 10px 0 7px 0
+		background-color: $grayLight
+		transition: color .3s ease-out, background-color 70ms ease-out
+		&:hover
+			text-decoration: none
+			color: $textcolor
+			background-color: transparent
+
+.left_news_list
+	list-style: none
+	margin: 0
+	padding: 0
+
+.left_news_item
+	display: flex
+	padding: 12px 19px  14px 10px
+	box-sizing: border-box
+	border-bottom: 1px solid darken($grayLight, 5%)
+	border-left: 1px solid darken($grayLight, 5%)
+	border-right: 1px solid darken($grayLight, 5%)
+	transition: color 70ms ease-out
+	transition: color 70ms ease-out
+	&:hover,
+	&:focus
+		.left_news_link
+			text-decoration: none
+			color: $accent
+
+
+
+.left_news_img_link
+	width: 60px
+	margin-right: 15px
+
+.left_news_img
+	flex-grow: 1
+.left_news_link
+	font-size: .9em
+	line-height: 1.6
+	color: $textcolor
+	transition: color 70ms ease-out
+	&:hover,
+	&:focus
+		text-decoration: none
+		color: $accent

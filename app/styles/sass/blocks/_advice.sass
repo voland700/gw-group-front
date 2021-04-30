@@ -1,0 +1,260 @@
+@keyframes shining
+	from
+		left: -45%
+		opacity: 1
+	90%
+		left: 80%
+		opacity: 1
+	95%
+		left: 90%
+		opacity: 0
+	to
+		left: 100%
+		opacity: 0
+@keyframes occurrence
+	from
+		opacity: 0
+	to
+		opacity: 1
+
+
+
+.advice_wrap
+	margin-bottom: 70px
+.advice_top_wrap
+	margin-bottom: 20px
+.advice_top_list
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	padding: 0
+	margin: 0
+.advice_top_item
+	list-style: none
+	margin: 0 29px 0 0
+	font-size: 1.1em
+	line-height: 30px
+	text-transform: none
+	border-bottom-width: 0
+	padding: 0 0 5px
+	cursor: pointer
+	color: $accent
+	span
+		transition: color .2s
+		padding-bottom: 5px
+	&:hover
+		color: $textcolor
+
+
+.advice_top_item.clicked
+	color: $textcolor
+	span
+		border-bottom: 2px solid $accent
+
+.advice_prodact_wrap.behold
+	display: flex
+	animation-duration: .5s
+	animation-fill-mode: both
+	animation-name: occurrence
+
+.advice_prodact_wrap
+	display: none
+	flex-wrap: wrap
+	justify-content: flex-start
+	box-sizing: border-box
+	opacity: 0
+
+.advice_item
+	position: relative
+	width: 25%
+	padding: 0
+	margin: -1px -1px 0 0
+	min-height: 327px
+
+.advice_item-wrap
+	background-color: #ffffff
+	border: 1px solid #f2f2f2
+	border-radius: 2px
+	padding: 0
+	cursor: pointer
+	transition: .2s
+	transition: box-shadow .2s ease-out
+	position: relative
+	visibility: visible
+	z-index: 100
+	&:focus,
+	&:hover
+		border-color: #ffffff
+		box-shadow: 0 0 20px 0 rgba(0,0,0,.15)
+		z-index: 130
+		.advice_img-link::before
+			animation-duration: .4s
+			animation-fill-mode: both
+			animation-name: shining
+		.advice_btn_wrap
+			transition: box-shadow .2s ease-out, color .2s ease-out
+			opacity: 1
+			visibility: visible
+			margin: 11px 0 0
+			height: auto
+		.advice_title_link
+			color: darken($textcolor, 10%)
+			text-decoration: none
+
+.advice_item_inner_wrap
+	border-color: #ffffff
+	padding: 20px
+
+.advice_img_blok
+	width: 100%
+	position: relative
+	padding-top: 10px
+	//margin-bottom: 10px
+	overflow: hidden
+
+.advice_lable_wpap
+	position: absolute
+	top: -5px
+	width: 90%
+	height: auto
+	text-align: left
+
+.advice_lable-hit,
+.advice_lable-stock,
+.advice_lable-advice,
+.advice_lable-new
+	width: auto
+	margin: 0 3px 3px 0
+	letter-spacing: .5px
+	position: relative
+	display: inline-block
+	color: #fff
+	font-size: .72em
+	line-height: 12px
+	padding: 4px 10px
+	text-transform: uppercase
+	border-radius: 2px
+	text-shadow: 1px 1px 0 rgba(0,0,0,.1)
+	box-shadow: 0 1px 1px rgba(0,0,0,.1)
+
+.advice_lable-hit
+	background-color: $hit
+.advice_lable-stock
+	background-color: $stock
+.advice_lable-advice
+	background-color: $advices
+.advice_lable-new
+	background-color: $new
+
+.advice_img-link
+	display: block
+	width: 100%
+	text-align: center
+	&::before
+		position: absolute
+		top: 0
+		left: -50%
+		//z-index: 2
+		display: block
+		content: ''
+		width: 25%
+		height: 100%
+		opacity: 0
+		overflow: hidden
+		background: -webkit-gradient(linear,left top,right top,color-stop(0,rgba(255,255,255,0)),to(rgba(255,255,255,.3)))
+		background: -o-linear-gradient(left,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 100%)
+		background: linear-gradient(to right,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 100%)
+		transform: skewX(-25deg)
+
+.advice_img
+	width: auto
+	max-height: 170px
+	margin: 0 auto
+.advice_title
+	overflow: hidden
+	text-overflow: ellipsis
+	display: block
+	min-height: 60px
+	font-size: 1.1em
+	line-height: 20px
+	font-weight: normal
+	text-align: center
+
+.advice_title_link
+	color: $textcolor
+	padding: 0
+	&:hover
+		color: darken($textcolor, 20%)
+		text-decoration: none
+
+.advice_price
+	font-size: 18px
+	font-weight: 700
+	line-height: 15px
+	text-align: center
+	margin-bottom: 10px
+.advice_price_old_wrap
+	align-self: center
+	text-align: center
+	min-height: 22px
+
+.advice_price-percent
+	width: auto
+	margin: 0
+	letter-spacing: .5px
+	display: inline-block
+	color: #fff
+	font-size: .9em
+	line-height: .9em
+	padding: 5px 10px
+	text-transform: uppercase
+	border-radius: 2px
+	text-shadow: 1px 1px 0 rgba(0,0,0,.1)
+	box-shadow: 0 1px 1px rgba(0,0,0,.1)
+	background-color: $accent
+.advice_price-old
+	width: auto
+	margin: 0
+	letter-spacing: .5px
+	display: inline-block
+	line-height: 12px
+	padding: 5px 10px
+	text-decoration: line-through
+	font-style: italic
+	color: lighten($textcolor, 30%)
+
+.advice_btn_wrap
+	display: flex
+	justify-content: center
+	opacity: 0
+	visibility: visible
+	height: 0
+
+.btn.advice_btn
+	display: inline-block
+	margin: 0 auto
+	align-self: center
+	margin-top: 20px
+	margin-bottom: 5px
+
+
+@include media-breakpoint-down(lg)
+	.advice_item
+		width: 33.33%
+	.advice_item-wrap
+		height: 100%
+
+@include media-breakpoint-down(sm)
+	.advice_top_wrap,
+	.advice_prodact_wrap
+		margin-left: 15px
+		margin-right: 15px
+	.advice_item
+		width: 50%
+	.advice_lable_wpap
+		width: 90%
+@media (max-width: 450px)
+	.advice_item
+		width: 100%
+	.advice_top_list
+		flex-wrap: wrap

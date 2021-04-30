@@ -1,0 +1,370 @@
+header
+	background-color: $white
+	//margin-top: 10px
+	//border-radius: 10px 10px 0 0
+.top
+	width: 100%
+	display: flex
+	justify-content: space-between
+	padding-top: 10px
+	padding-bottom: 10px
+.logo
+	width: 220px
+	display: flex
+	color: $black
+	text-decoration: none
+	transition: color 70ms ease-out
+
+	&:hover
+		text-decoration: none
+		color: #d76743
+
+.logo_svg
+	width: 40px
+	height: 40px
+	margin-right: 10px
+.logo_name_wrap
+	display: inline-block
+
+.logo_name
+	font-size: 1.8em
+	font-weight: 700
+	line-height: 1em
+	margin-bottom: 2px
+
+.logo_subname
+	font-size: .9em
+	line-height: 1em
+	float: right
+	font-style: italic
+
+.top_phone_wrap
+	display: flex
+
+.top_phone_icon
+	display: inline-block
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	background-color: $accent
+	font-size: 1.5em
+	line-height: 40px
+	text-align: center
+	color: $white
+	margin-right: 10px
+.top_phone_list.one
+	.top_phone
+		font-size: 1.5em
+		font-weight: 700
+		line-height: 22px
+.top_phone_list.two
+	.top_phone
+		font-size: 1.3em
+		font-weight: 700
+		line-height: 20px
+.top_phone
+	display: block
+	a
+		color: $textcolor
+		&:hover
+			color: $textcolor
+			text-decoration: none
+.top_col-back
+	//color: $textcolor
+	display: block
+	color: $accent
+	text-align: right
+	transition: color 70ms ease-out
+	&:hover,
+	&:focus
+		color: $accent
+
+
+.top_search
+	flex-grow: 1
+	height: 40px
+	margin: 0 50px
+
+.top_search_form
+	display: flex
+	position: relative
+	height: 100%
+
+.top_search_input
+	flex-grow: 1
+	border-color: transparent
+	border-radius: 5px
+	background-color: darken($grayLight, 3%)
+	height: 100%
+	padding-left: 15px
+	padding-right: 45px
+	color: lighten($textcolor, 10%)
+
+
+
+
+.top_search_btn
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	border: none
+	outline: none
+	width: 40px
+	height: auto
+	background-color: transparent
+	transition: color 70ms ease-out
+	&:hover,
+	&:focus
+		color: $accent
+
+
+
+
+
+
+.top_info_wrap
+	//width: 200px
+	//border: 1px solid #eee
+
+	display: flex
+	justify-content: flex-end
+	align-items: center
+
+
+
+
+
+
+.top_info_auth
+	display: flex
+
+	margin-right: 10px
+	color: lighten($textcolor, 15%)
+	.icon-user
+		font-size: 1.1em
+		margin-right: 5px
+.top_info_auth_name
+	display: inline-block
+	width: 50px
+	font-size: .9em
+	overflow: hidden
+	white-space: nowrap
+	padding-right: 5px
+	text-overflow: ellipsis
+
+
+
+
+
+.top_info_bascet
+	display: flex
+	color: lighten($textcolor, 15%)
+	.icon-shopping-cart1
+		font-size: 1.1em
+		margin-right: 5px
+.top_info_auth_info
+	display: inline-block
+	font-size: .9em
+
+.top_info_auth,
+.top_info_bascet
+	transition: color 70ms ease-out
+	&:hover,
+	&:focus
+		color: $accent
+		text-decoration: none
+
+.top_info_auth.auth,
+	.icon-user
+		color: $accent
+.top_info_bascet.full
+	.icon-shopping-cart1,
+	.top_info_auth_info
+		color: $accent
+
+
+//top_menu
+
+.top_menu_wrap
+	display: flex
+	height: 45px
+	border: none
+	border-radius: 5px
+	background-color: darken($accent, 3%)
+
+.top_menu_btn
+	display: none
+	height: 100%
+	border: none
+	border-radius: 5px
+	text-transform: uppercase
+	font-size: 1em
+	font-weight: 600
+	line-height: 45px
+	text-decoration: none
+	color: $white
+	background-color: $accent
+	transition: background-color 70ms ease-out
+	&:hover,
+	&:focus
+		text-decoration: none
+		color: $white
+		background-color: darken($accent, 3%)
+	.icon-list2,
+	.icon-cross
+		margin-right: 10px
+		font-size: .9em
+.top_menu_catalog
+	width: 220px
+.top_menu_top_menu_catalog_link
+	display: block
+	height: 100%
+	border: none
+	border-radius: 5px
+	text-transform: uppercase
+	font-size: .9em
+	font-weight: 600
+	line-height: 45px
+	text-align: center
+	text-decoration: none
+	color: $white
+	background-color: $accent
+	transition: background-color 70ms ease-out
+	&:hover,
+	&:focus
+		text-decoration: none
+		color: $white
+		background-color: darken($accent, 3%)
+
+	.icon-list2
+		margin-right: 10px
+		font-size: .9em
+
+.top_menu_list
+	display: flex
+	flex-grow: 1
+	justify-content: space-around
+.top_menu_link
+	display: block
+	height: 100%
+	border: none
+	text-transform: uppercase
+	font-size: .9em
+	font-weight: 600
+	line-height: 45px
+	text-align: center
+	text-decoration: none
+	color: $white
+	padding: 0 20px
+	transition: background-color 70ms ease-out
+
+	&:hover,
+	&:focus
+		text-decoration: none
+		color: $white
+		background-color: darken($accent, 7%)
+
+
+.top_menu_link.active
+	background-color: darken($accent, 7%)
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 1200px)
+ .top_menu_link
+	 padding: 0 20px
+
+
+
+
+@media only screen and (max-width : 992px)
+	.top
+		flex-wrap: wrap
+	.logo
+		order: 1
+		width: auto
+	.top_phone_wrap
+		order: 2
+	.top_search
+		order: 4
+		margin: 15px 0 0 0
+	.top_info_wrap
+		order: 3
+
+	.top_menu_wrap
+		background-color: transparent
+	.top_menu_btn
+		width: 100%
+		text-align: left
+		padding-left: 50px
+
+
+	.top_menu_wrap.closed
+		.top_menu_btn
+			display: block
+		.top_menu_catalog
+			display: none
+		.top_menu_list
+			display: none
+
+	.top_menu_wrap.opened
+		background-color: transparent
+
+		flex-direction: column
+		height: auto
+		.top_menu_btn
+			display: block
+
+
+		.top_menu_catalog
+			display: block
+			color: $textcolor
+			width: 100%
+			.top_menu_top_menu_catalog_link
+				background-color: $grayLight
+				color: $textcolor
+				border-bottom: 1px solid darken($grayLight, 5%)
+			.icon-list2
+				display: none
+		.top_menu_list
+			display: flex
+			flex-direction: column
+		.top_menu_link.active
+			background-color: $grayLight
+			color: $accent
+
+		.top_menu_link
+			color: $textcolor
+			background-color: $grayLight
+			border-bottom: 1px solid darken($grayLight, 5%)
+
+
+
+
+
+@media only screen and (max-width : 768px)
+	.logo_name_wrap
+		display: none
+	.top_phone_icon
+		display: none
+
+@media only screen and (max-width : 440px)
+	.top_info_auth
+		.icon-user
+			font-size: 1.5em
+	.top_info_bascet
+		.icon-shopping-cart1
+			font-size: 1.5em
+
+	.top_info_auth_name
+		display: none
+	.top_info_auth_info
+		display: none

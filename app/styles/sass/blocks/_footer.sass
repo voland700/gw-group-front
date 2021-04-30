@@ -1,0 +1,199 @@
+.footer_wrap
+	background-color: $footterBottom
+.footer_wrap_inner
+	padding: 34px 0 0 0
+.footer_block
+	margin-bottom: 15px
+.footer_title
+	color: #ffffff
+	//color: darken($white, 5% )
+	margin-bottom: 20px
+
+.footer_menu_list
+	padding-left: 0
+	list-style: none
+.footer_menu_item
+	font-size: 1.1em
+	line-height: 1.5
+	margin-bottom: 5px
+.footer_menu_link
+	//color: #b0b0b0
+	color: darken($white, 30% )
+	text-decoration: none
+	transition: color .2s ease-out
+	&:hover
+		color: $accent
+		text-decoration: none
+.active .footer_menu_link
+	color: $accent
+
+
+
+.footer_info_list
+	padding-left: 0
+	list-style: none
+	margin-bottom: 30px
+.footer_info_item
+	font-size: 1.1em
+	line-height: 1.5
+	margin-bottom: 5px
+	color: #ffffff
+	span[class^="icon-"]
+		color: #ffffff
+		margin-right: 10px
+.footer_info_phoe-link
+	color: #ffffff
+	font-weight: 700
+	&:hover
+		color: $accent
+		text-decoration: none
+
+
+.footer_social
+.footer_social_title
+    color:	#ffffff
+    font-weight: 700
+    font-size: 1.2em
+    margin: 0 0 10px
+.footer_social_list
+	padding-left: 0
+	list-style: none
+	width: 220px
+	li
+		display: inline-block
+		zoom: 1
+		padding: 0
+		margin: 0
+		a
+			display: block
+			position: relative
+			width: 35px
+			height: 35px
+			overflow: hidden
+			border-radius: 100%
+			font-size: 0
+			margin: 0 10px 10px 0
+			background: 0 0
+			background-image: url(/images/src/icons/social.png)
+			background-repeat: no-repeat
+			transition: .3s
+			&:hover
+				opacity: .8
+	.vk a
+		background-position: -6px -6px
+	.facebook a
+		background-position: -56px -6px
+	.twitter a
+		background-position: -106px -6px
+	.instagram a
+		background-position: -156px -6px
+	.ytb a
+		background-position: -206px -6px
+	.odn a
+		background-position: -256px -6px
+	.gplus a
+		background-position: -56px -56px
+	.mail a
+		background-position: -6px -56px
+
+.footer_bottom_wrap
+	border-top: 1px solid #555555
+	height: 80px
+.footer_bottom_info
+	display: flex
+	align-items: center
+	color: darken($white, 40% )
+.footer_bottom_pay
+	display: flex
+	justify-content: flex-end
+	align-items: center
+.footer_pay_icon_list
+	width: auto
+	padding: 0
+	margin: 0
+	list-style: none
+	margin-right: -15px
+	li
+		display: inline-block
+		height: 20px
+		width: 34px
+		background: url(/images/src/icons/pay_icons.png) no-repeat
+		margin-right: 7px
+		&:last-child
+			margin-right: 0
+	.cacsh
+		background-position: 0 -1px
+	.mastercard
+		background-position: -42px -1px
+	.visa
+		background-position: -89px -1px
+	.yandex_money
+		background-position: -142px -1px
+	.webmoney
+		background-position: -182px -1px
+	.qiwi
+		background-position: -222px -1px
+	.sbrf
+		background-position: -259px -1px
+	.alfa
+		background-position: -305px -1px
+
+.btn_up
+	display: none
+	width: 40px
+	height: 40px
+	border-radius: 100%
+	text-align: center
+	position: fixed
+	right: 100px
+	bottom: 100px
+	//background-color: $accent
+	background-color: darken($grayLight, 20px)
+	cursor: pointer
+	font-size: 1.7em
+	line-height: 43px
+	color: #ffffff
+	//color: inherit
+	opacity: .3
+	transition: background-color .3s ease-out, opacity .3s ease-out
+	&:hover
+		background-color: $accent
+		opacity: 1
+
+
+@media (max-width: 1450px)
+	.btn_up
+		right: 50px
+
+
+@include media-breakpoint-down(lg)
+	.btn_up
+		right: 25px
+
+@include media-breakpoint-down(sm)
+	.footer_block
+		margin-bottom: 30px
+	.footer_bottom_wrap
+		padding-top: 20px
+		height: auto
+		padding: 20px 0
+
+	.footer_bottom_info
+		order: 2
+		width: 100%
+		justify-content: center
+
+	.footer_bottom_pay
+		order: 1
+		width: 100%
+		justify-content: center
+		margin-bottom: 15px
+
+@include media-breakpoint-down(xs)
+	.footer_block
+		text-align: center
+	.footer_social_title
+		margin-bottom: 20px
+	.footer_social_list
+		margin-left: auto
+		margin-right: auto

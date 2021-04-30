@@ -1,0 +1,90 @@
+.brands_curusel-wrap
+	padding: 20px 0
+
+.brands_curusel-wrap-inner
+	border-top: 1px solid #f2f2f2
+	border-bottom: 1px solid #f2f2f2
+	padding-left: 30px
+	padding-right: 30px
+.brands_curusel
+	width: 100%
+	position: relative
+.brands_curusel_item
+	display: block
+	width: 100%
+	height: 8rem
+	cursor: pointer
+.brands_curusel_link
+	display: block
+	position: relative
+	height: 100%
+	z-index: 1000
+
+.brands_curusel_img
+	display: block
+	position: absolute
+	top: 50%
+	right: 50%
+	transform: translate(50%, -50%)
+	max-width: 60%
+	max-height: 60%
+	margin: auto
+	filter: grayscale(100%)
+	opacity: .7
+
+.brands_curusel .owl-item img
+	width: auto
+
+.brends-owl-nav
+	position: absolute
+	width: 100%
+	height: 50px
+	top: 50%
+	transform: translateY(-50%)
+	z-index: -1
+
+	.owl-prev,
+	.owl-next
+		display: block
+		position: absolute
+		top: 5px
+		width: 40px
+		height: 40px
+		border: 0
+		outline: none
+		background-color: transparent
+		z-index: 150
+		transition: all .3s ease-out
+		span
+			position: absolute
+			left: 50%
+			top: -50%
+			transform: translate(-55%, 9%)
+			font-size: 40px
+
+	.owl-prev
+		left: -30px
+		visibility: hidden
+		opacity: 0
+		&:hover
+			span
+				color: $accent
+	.owl-next
+		right: -30px
+		visibility: hidden
+		opacity: 0
+		&:hover
+			span
+				color: $accent
+
+.brands_curusel:hover
+	.owl-prev,
+	.owl-next
+		visibility: visible
+		opacity: 1
+
+.brands_curusel_item:hover
+	.brands_curusel_img
+		transition: all .3s ease-out
+		filter: grayscale(0)
+		opacity: 1

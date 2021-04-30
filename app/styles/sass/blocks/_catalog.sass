@@ -1,0 +1,96 @@
+.catalog_list
+	display: flex
+	flex-wrap: wrap
+	box-sizing: border-box
+
+.catalog_item_wrap
+	width: 50%
+	padding: 0
+	margin: 0 0 -1px -1px
+
+.catalog_item
+	position: relative
+	width: 100%
+	height: 100%
+	padding: 30px
+	background-color: #ffffff
+	border: 1px solid #f2f2f2
+	border-radius: 2px
+	zoom: 1
+	cursor: pointer
+	transition: box-shadow .2s, border .2s ease-out
+	&:hover,
+	&:focus
+		box-shadow: 0 0 20px 0 rgba(0,0,0,.15)
+		border-color: #ffffff
+		z-index: 10
+.catalog_item_inner
+	display: flex
+.catalog_img_wrap
+	display: block
+	width: 120px
+	height: 120px
+	margin-right: 25px
+.catalog_img_link
+	display: block
+	height: 100%
+	img
+		display: block
+		max-width: 120px
+		max-height: 120px
+		margin-left: auto
+		margin-left: auto
+.catalog_txt_wrap
+
+.catalog_txt_title
+	font-size: 1.1em
+	font-weight: normal
+	line-height: 1.2em
+
+.catalog_txt_link
+	color: #222222
+	transition: color 70ms ease-out
+	&:hover,
+	&:focus
+		color: $accent
+		text-decoration: none
+
+
+.catalog_txt_list
+	padding: 0
+	margin: 0
+	list-style: none
+
+
+.catalog_txt_item
+	display: inline-block
+	padding: 0 8px 0 0
+	font-weight: normal
+	line-height: 1.3
+	font-size: .9em
+
+	a
+		transition: color 70ms ease-out
+		color: #666666
+		span
+			color: #999999
+			font-style: italic
+			padding-left: 3px
+		&:hover,
+		&:focus
+			color: $accent
+			text-decoration: none
+			span
+				color: lighten($accent, 15%)
+
+
+@include media-breakpoint-down(lg)
+	.catalog_img_wrap
+		width: 100px
+		height: 100px
+	.catalog_img_link img
+		max-width: 100px
+		max-height: 100px
+@include media-breakpoint-down(sm)
+	.catalog_item_wrap
+		width: 100%

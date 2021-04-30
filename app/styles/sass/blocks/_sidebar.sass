@@ -1,0 +1,377 @@
+.content
+	display: flex
+	background-color: $white
+.sidebar
+	width: 220px
+	margin-right: 20px
+	.menu_left
+		display: flex
+		flex-direction: column
+		padding: 0
+		list-style: none
+		margin-bottom: 20px
+
+.menu_left_item
+	position: relative
+	box-sizing: border-box
+	background-color: $grayLight
+	border-bottom: 1px solid darken($grayLight, 5%)
+	border-left: 1px solid darken($grayLight, 5%)
+	border-right: 1px solid darken($grayLight, 5%)
+	transition: background-color 70ms ease-out
+
+	&:hover,
+	&:focus
+		background-color: transparent
+		&::before
+			content: ''
+			width: 4px
+			height: 100%
+			background-color: $accent
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+
+		.menu_left_link
+			text-decoration: none
+			color: $accent
+
+
+
+
+.menu_left_item.active
+		background-color: transparent
+		&::before
+			content: ''
+			width: 4px
+			height: 100%
+			background-color: $accent
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+
+		.menu_left_link
+			text-decoration: none
+			color: $accent
+
+.menu_left_link
+	display: block
+	padding: 11px 31px 13px 17px
+	box-sizing: border-box
+	color: $textcolor
+
+main
+	flex-grow: 1
+	width: 870px
+	margin-top: 20px
+
+@media only screen and (max-width : 1200px)
+	main
+		width: 690px
+@media only screen and (max-width : 992px)
+	.sidebar
+		display: none
+@media only screen and (max-width : 768px)
+	main
+		width: 510px
+@media only screen and (max-width : 576px)
+	main
+		width: 100%
+
+
+
+
+
+
+.slider_wrap
+	width: 870px
+	margin-bottom: 20px
+.slider
+.slider_item
+	display: flex
+	min-height: 322px
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center center
+	box-sizing: border-box
+	border-radius: 3px
+.slider_item.left
+	.slider_info_wrap
+		order: 1
+		padding-left: 30px
+	.slider_add_img
+		order: 2
+	.btn-sl
+		align-self: flex-start
+
+.slider_item.right
+	.slider_info_wrap
+		order: 2
+		padding-right: 30px
+	.slider_add_img
+		order: 1
+	.btn-sl
+		align-self: flex-end
+.slider_info_wrap
+	flex-basis: 50%
+	display: flex
+	flex-direction: column
+	justify-content: center
+
+
+
+
+
+
+.slider_info_wrap.white
+	background: radial-gradient(ellipse at center,  rgba(3,14,17,0.26) 0%,rgba(3,14,17,0.12) 44%,rgba(125,185,232,0) 70%)
+	.slider_title_link
+		color: $white
+		text-shadow: 0 0 10px rgba(0,0,0,.3)
+		&:hover
+			text-decoration: none
+	.slider_p
+		color: $white
+		text-shadow: 0 0 10px rgba(0,0,0,.3)
+
+.slider_info_wrap.black
+	.slider_title_link
+		color: $textcolor
+		&:hover
+			text-decoration: none
+	.slider_p
+		color: $textcolor
+
+.slider_title
+	font-size: 2em
+	font-weight: 700
+	line-height: 1.2em
+
+.btn-sl
+	align-self: flex-end
+.slider_add_img
+	flex-basis: 45%
+	background-repeat: no-repeat
+	background-size: contain
+	background-position: center bottom
+
+
+.slider_wrap
+	.owl-nav
+		position: absolute
+		width: 100%
+		height: 50px
+		top: 50%
+		transform: translateY(-50%)
+	.owl-prev,
+	.owl-next
+		//display: block
+
+		display: flex
+
+		justify-content: center
+		align-items: center
+
+
+
+
+		position: absolute
+		width: 40px
+		height: 40px
+		border-radius: 40px
+		outline: none
+		span
+			font-size: 40px
+			line-height: 40px
+			padding-bottom: 5px
+
+	.owl-prev
+		left: -50px
+		visibility: hidden
+		opacity: 0
+	.owl-next
+		right: -50px
+		visibility: hidden
+		opacity: 0
+
+.slider_wrap
+	.owl-carousel .owl-nav button.owl-next,
+	.owl-carousel .owl-nav button.owl-prev,
+		background-color: #ffffff
+		outline: none
+		z-index: 25
+		transition: .3s
+		&:hover
+			opacity: 1
+			color: $accent
+
+	.owl-carousel button.owl-dot
+		outline: none
+		z-index: 25
+
+@keyframes fadeLeftBtn
+	from
+		right: -30px
+		visibility: hidden
+		opacity: 0
+	to
+		right: 20px
+		visibility: visible
+		opacity: .9
+
+@keyframes fadeRightBtn
+	from
+		left: -30px
+		visibility: hidden
+		opacity: 0
+	to
+		left: 20px
+		visibility: visible
+		opacity: .8
+
+.slider:hover
+	.owl-prev
+		animation-duration: .5s
+		animation-fill-mode: both
+		animation-name: fadeRightBtn
+	.owl-next
+		animation-duration: 1s
+		animation-fill-mode: both
+		animation-name: fadeLeftBtn
+
+.slider_wrap
+	.owl-carousel .owl-nav button.owl-next,
+	.owl-carousel .owl-nav button.owl-prev,
+		background-color: #ffffff
+		outline: none
+		z-index: 25
+		transition: .3s
+		&:hover
+			opacity: 1
+			color: $accent
+
+	.owl-carousel button.owl-dot
+		outline: none
+		z-index: 25
+
+.owl-dots
+	display: inline-block
+	position: absolute
+	bottom: 0
+	left: 50%
+	transform: translateX(-50%)
+.owl-dot
+	margin-right: 8px
+	margin-bottom: 15px
+	outline: none
+	&:last-child
+		margin-right: 0
+.owl-dot span
+	display: block
+	width: 12px
+	height: 12px
+	border: 2px solid rgba($grayLight, 0.8)
+	border-radius: 12px
+
+.owl-dot.active span
+	background-color: #ffffff
+	border-color: #ffffff
+
+.slider_elem-wrap
+	width: 100%
+	height: 100%
+	display: flex
+.slider_elem-content
+	width: 50%
+	display: flex
+	//flex-direction: column
+	align-items: center
+.slider_elem-content-wrap
+	padding-left: 50px
+	padding-bottom: 25px
+	overflow: hidden
+
+
+.slider_elem-title
+	font-size: 2em
+	font-weight: normal
+	line-height: 33px
+	text-align: left
+	a
+		&:hover
+			text-decoration: none
+
+
+.slider_icons_wrap
+	width: 100%
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+
+.slider_icons_item
+
+	width: 24%
+	display: flex
+	align-items: center
+	//padding: 0 10px
+
+.slider_icons_img
+	display: block
+	width: 40px
+	height: 40px
+	margin-right: 12px
+
+.slider_icons_text
+	display: block
+	font-size: .95em
+	line-height: 1.25em
+
+
+
+
+
+@media only screen and (max-width : 1200px)
+	.slider_wrap
+		width: 690px
+@media only screen and (max-width : 992px)
+	.slider_info_wrap
+		flex-basis: 55%
+
+
+@media only screen and (max-width : 768px)
+	.slider_wrap
+		width: 510px
+		.slider_item
+		display: block
+		position: relative
+	.slider_item
+		.slider_add_img
+			display: none
+
+	.slider_info_wrap
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+
+	.slider_item.left
+		.slider_info_wrap
+			padding-right: 30px
+	.slider_item.right
+		.slider_info_wrap
+			padding-left: 30px
+	.slider_icons_item
+		width: 48%
+		margin-bottom: 10px
+
+
+
+
+@media only screen and (max-width : 576px)
+	.slider_wrap
+		display: none
+
+@media only screen and (max-width : 420px)
+	.slider_icons_item
+		width: 100%

@@ -1,0 +1,59 @@
+.pagination
+
+.pagination-wrap
+	ul
+		display: flex
+		justify-content: center
+		//margin: 0
+		padding-left: 0
+		list-style: none
+		margin-bottom: 40px
+
+	li
+		display: inline-block
+		width: 32px
+		height: 32px
+		text-align: center
+		line-height: 32px
+		margin: 0 5px 5px 0
+		text-decoration: none
+		font-size: 1.1em
+		font-weight: 700
+		border-radius: 2px
+		color: $textcolor
+		transition: color .3s ease, background-color .3s ease
+		a
+			display: block
+			height: 100%
+			text-decoration: none
+			color: $textcolor
+			transition: color .3s ease
+			&:hover,
+			&:focus
+				text-decoration: none
+				color: $accent
+	.icon-cheveron-right1,
+	.icon-cheveron-left
+		font-size: 1.4em
+		line-height: 1.45em
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	li.bx-active
+		background-color: $accent
+		color: #ffffff

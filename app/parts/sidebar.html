@@ -1,0 +1,203 @@
+<aside class="sidebar">
+	<ul class="menu_left">
+		<!--add li -item //.active-->
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Печи-камины</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Каминные топки</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Отпительные печи</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Печи для бани</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Мнгалы, барбекю</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Пченое литё</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Печной кирпич</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Печные смеси</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Аксеесуары для печей</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Дымоходы</a></li>
+		<li class="menu_left_item"><a href="#" class="menu_left_link">Котлы отопления</a></li>
+	</ul>
+
+	<div class="filter">
+		<form action="#" method="GET" id="filterPrice">
+<div id='id66' class="">
+	<div class="filter_filds_wrap">
+		<input id='id66i1' class='filter_price_min' type='number' min='20' max='700'>
+		<input id='id66i2' class='filter_price_max' type='number' min='20' max='700'>
+	</div>
+	<div class="filter_range_wrap">
+		<div id='id66b' class='range'></div>
+		<button id='id661' class="range__button_1"></button>
+		<button id='id662' class="range__button_2"></button>
+	</div>
+
+
+
+
+</div>
+<!--<button class="btn">Показать</button>-->
+		</form>
+	</div>
+
+
+
+
+	<div class="banners_left_wrap">
+		<div class="banners_left_item">
+			<a href="#" class="banners_left_link">
+				<img src="/images/src/banners/credit.jpg" alt="Расрочка" class="banners_left_img">
+			</a>
+		</div>
+		<div class="banners_left_item">
+			<a href="#" class="banners_left_link">
+				<img src="/images/src/banners/montage_1.jpg" alt="Расрочка" class="banners_left_img">
+			</a>
+		</div>
+	</div>
+
+	<!--Left-articles-Block-->
+
+	<div class="left_articles_wrap">
+		<div class="left_articles_top_wrap">
+			<span class="left_articles_top_title">Статьи</span>
+			<div class="left_articles_top_link"><a href="/">Все статьи</a></div>
+		</div>
+		<ul class="left_articles_list">
+			<li class="left_articles_item"><a href="/" class="left_articles_link">Чугунные печи Jotul для дачи</a></li>
+			<li class="left_articles_item"><a href="/" class="left_articles_link">Почему мы выбираем печи для отпления дома из чугуна</a></li>
+			<li class="left_articles_item"><a href="/" class="left_articles_link">Как выбрать и купить печь для бани и сауны</a></li>
+			<li class="left_articles_item"><a href="/" class="left_articles_link">Уличные печи барбекю MORSO</a></li>
+		</ul>
+
+	</div>
+	<!--The-END-Left-articles-Block-->
+
+	<!--Left NEWS-->
+	<div class="left_news_wrap">
+		<div class="left_news_top_wrap">
+			<span class="left_news_top_title">Новости</span>
+			<div class="left_news_top_link"><a href="/">Все новости </a></div>
+		</div>
+		<ul class="left_news_list">
+			<li class="left_news_item">
+				<a href="#" class="left_news_img_link">
+					<img src="/images/src/news/everest_12.jpg" alt="Картинка новости" class="left_news_img">
+				</a>
+				<a href="#" class="left_news_link">Новинка производителя печь-камин Эверест-12</a>
+			</li>
+
+			<li class="left_news_item">
+				<a href="#" class="left_news_img_link">
+					<img src="/images/src/news/sauna.jpg" alt="Картинка новости" class="left_news_img">
+				</a>
+				<a href="#" class="left_news_link">Чугунные печи для бани Везувий Легенда Русский пар</a>
+			</li>
+
+			<li class="left_news_item">
+				<a href="#" class="left_news_img_link">
+					<img src="/images/src/news/grill-2.jpg" alt="Картинка новости" class="left_news_img">
+				</a>
+				<a href="#" class="left_news_link">Везувий решётка гриль и барбекю - два в одном</a>
+			</li>
+
+		</ul>
+	</div>
+	<!--Left NEWS-->
+</aside>
+
+
+
+<script>
+	setTimeout(init2slider('id66', 'id66b', 'id661', 'id662'), 0);
+
+		function init2slider(idX, btwX, btn1X, btn2X) {
+			var slider = document.getElementById(idX);
+			var between = document.getElementById(btwX);
+			var button1 = document.getElementById(btn1X);
+			var button2 = document.getElementById(btn2X);
+
+
+
+			button1.onmousedown = function (evt) {
+				var sliderCoords = getCoords(slider);
+				var betweenCoords = getCoords(between);
+				var buttonCoords1 = getCoords(button1);
+				var buttonCoords2 = getCoords(button2);
+				var shiftX2 = evt.pageX - buttonCoords2.left;
+				var shiftX1 = evt.pageX - buttonCoords1.left;
+
+				document.onmousemove = function (evt) {
+					var left1 = evt.pageX - shiftX1 - sliderCoords.left;
+					var right1 = slider.offsetWidth - button1.offsetWidth;
+					if (left1 < 0) left1 = 0;
+					if (left1 > right1) left1 = right1;
+					button1.style.marginLeft = left1 + 'px';
+
+					shiftX2 = evt.pageX - buttonCoords2.left;
+					var left2 = evt.pageX - shiftX2 - sliderCoords.left;
+					var right2 = slider.offsetWidth - button2.offsetWidth;
+
+					if (left1 > left2) {
+						between.style.width = (left1 - left2) + 'px';
+						between.style.marginLeft = left2 + 'px';
+					}
+					else {
+						between.style.width = (left2 - left1) + 'px';
+						between.style.marginLeft = left1 + 'px';
+					}
+
+				};
+				document.onmouseup = function () {
+					document.onmousemove = document.onmouseup = null;
+				};
+				return false;
+			};
+
+			button2.onmousedown = function (evt) {
+				var sliderCoords = getCoords(slider);
+				var betweenCoords = getCoords(between);
+				var buttonCoords1 = getCoords(button1);
+				var buttonCoords2 = getCoords(button2);
+				var shiftX2 = evt.pageX - buttonCoords2.left;
+				var shiftX1 = evt.pageX - buttonCoords1.left;
+
+				document.onmousemove = function (evt) {
+					var left2 = evt.pageX - shiftX2 - sliderCoords.left;
+					var right2 = slider.offsetWidth - button2.offsetWidth;
+					if (left2 < 0) left2 = 0;
+					if (left2 > right2) left2 = right2;
+					button2.style.marginLeft = left2 + 'px';
+
+					shiftX1 = evt.pageX - buttonCoords1.left;
+					var left1 = evt.pageX - shiftX1 - sliderCoords.left;
+					var right1 = slider.offsetWidth - button1.offsetWidth;
+
+					if (left1 > left2) {
+						between.style.width = (left1 - left2) + 'px';
+						between.style.marginLeft = left2 + 'px';
+					}
+					else {
+						between.style.width = (left2 - left1) + 'px';
+						between.style.marginLeft = left1 + 'px';
+					}
+
+				};
+				document.onmouseup = function () {
+					document.onmousemove = document.onmouseup = null;
+				};
+				return false;
+			};
+
+			button1.ondragstart = function () {
+				return false;
+			};
+			button2.ondragstart = function () {
+				return false;
+			};
+
+			function getCoords(elem) {
+				var box = elem.getBoundingClientRect();
+				return {
+					top: box.top + pageYOffset,
+					left: box.left + pageXOffset
+				};
+			}
+
+		}
+</script>

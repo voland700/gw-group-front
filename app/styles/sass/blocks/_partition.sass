@@ -1,0 +1,120 @@
+@keyframes shine
+	from
+		left: -45%
+		opacity: 1
+	to
+		left: 100%
+		opacity: 1
+
+.partition_wrap
+	margin-top: 30px
+	margin-bottom: 30px
+.partition_top
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	margin-bottom: 15px
+.partition_top_name
+	margin: 0 38px 0 0
+	font-size: 1.2em
+	color: $textcolor
+	line-height: 30px
+	font-weight: 400
+.partition_top_link
+	color: $accent
+	font-size: 1.1em
+	line-height: 30px
+	//padding-top: .4em
+	transition: color .3s ease-out
+	&:hover
+		color: $textcolor
+		text-decoration: none
+
+.partition_list_wrap
+	display: flex
+	justify-content: flex-start
+	flex-wrap: wrap
+
+.partition_item_wrap
+	width: 25%
+	text-align: center
+	border: 1px solid #f2f2f2
+	border-radius: 2px
+	padding: 30px 10px
+	margin: -1px -1px 0 0
+	cursor: pointer
+	transition: .2s
+	&:focus,
+	&:hover
+		border-color: #ffffff
+		box-shadow: 0 0 20px 0 rgba(0,0,0,.15)
+		.partition_item-link
+			transition: .2s
+			color: $accent
+			text-decoration: none
+		.partition_item_img-wrap::after
+			animation-duration: .4s
+			animation-fill-mode: both
+			animation-name: shine
+
+
+.partition_item
+	width: 100%
+.partition_item_img-wrap
+	position: relative
+	width: 120px
+	height: 120px
+	overflow: hidden
+	margin: 0	auto 20px auto
+	&::after
+		position: absolute
+		top: 0
+		left: 50%
+		z-index: 2
+		display: block
+		content: ''
+		width: 25%
+		height: 100%
+		opacity: 0
+		background: linear-gradient(to right,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 100%)
+		transform: skewX(-25deg)
+
+
+
+.partition_item_img-link
+.partition_item-img
+	display: block
+	max-width: 120px
+	max-height: 120px
+.partition_item_name
+	overflow: hidden
+	text-overflow: ellipsis
+	display: block
+	font-size: 1.1em
+	line-height: 20px
+.partition_item-link
+	color: $textcolor
+
+
+@include media-breakpoint-down(md)
+	.partition_item_wrap
+		width: 33.33%
+
+@include media-breakpoint-down(sm)
+	.partition_top
+		padding-left: 15px
+		padding-right: 15px
+	.partition_list_wrap
+		margin-left: 15px
+		margin-right: 15px
+	.partition_item_wrap
+		width: 50%
+@media (max-width: 430px)
+	.partition_top_name
+		display: none
+@media (max-width: 410px)
+	.partition_list_wrap
+		margin-left: 15px
+		margin-right: 15px
+	.partition_item_wrap
+		width: 100%
