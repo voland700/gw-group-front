@@ -1,65 +1,93 @@
 .filter
 	background-color: $grayLight
 	border: 1px solid darken($grayLight, 5%)
-	padding: 15px
-
+	padding: 20px 15px 20px 15px
 	margin-bottom: 20px
+.filter_title
+	padding: 11px 31px 13px 17px
+	border-top: 1px solid darken($grayLight, 5%)
+	border-left: 1px solid darken($grayLight, 5%)
+	border-right: 1px solid darken($grayLight, 5%)
+	background-color: $grayLight
+	font-weight: 600
+	color: lighten($textcolor, 15%)
+	font-size: .95em
+	//color: #1d2029
 
 .filter_filds_wrap
 	display: flex
 	justify-content: space-between
+	margin-bottom: 25px
 .filter_price_min,
 .filter_price_max
 	width: 88px
 	height: 30px
 	border: 1px solid darken($grayLight, 4%)
 	border-radius: 5px
-	padding-left: 5px
+	padding-left: 30px
 	padding-right: 5px
 	overflow: hidden
 	font-size: .9em
 	color: lighten($textcolor, 35%)
-	margin-bottom: 15px
-.filter_range_wrap
 
-.filter_range_inner
-	display: flex
-	justify-content: space-between
-.filter_range_min,
-.filter_range_max
-	font-size: .9em
-	color: lighten($textcolor, 35%)
+.filter_input_wrap-min,
+.filter_input_wrap-max
+	position: relative
+	&::before
+		display: block
+		width: 28px
+		height: 28px
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 8px
+		font-size: 1em
+		line-height: 30px
+		color: lighten($textcolor, 55%)
+.filter_input_wrap-min::before
+	content: 'от'
+.filter_input_wrap-max::before
+	content: 'до'
 
-
-
-.range
-	width: 100%
+.filter_price_range
 	margin-bottom: 30px
+.filter_form
+	button
+		display: block
+		margin: 0 auto
+		background-color: $opposite
+		&:focus,
+		&:hover
+			background-color: darken($opposite, 5%)
 
-	height: 10px
 
-	border-radius: 4px
-	background-color: #ddd
+.filter_filds_wrap
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button
+		-webkit-appearance: none
+		margin: 0
+	input[type=number]
+		-moz-appearance: textfield
+		&::-webkit-input-placeholder
+			color: lighten($textcolor, 35%)
+		&::-moz-placeholder
+			color: lighten($textcolor, 35%)
+		&:-ms-input-placeholder
+			color: lighten($textcolor, 35%)
 
+.noUi-horizontal
+	height: 8px
 
-.range__button_1, .range__button_2
-	position: absolute
-	top: 50%
-
+.noUi-horizontal .noUi-handle
 	width: 20px
 	height: 20px
+	right: -17px
+	top: -7px
 
-	cursor: move
-	transform: translateY(-50%)
-
-	border: none
-	border-radius: 50%
-	background-color: #999
-
-.range__between
-	position: absolute
-	height: 5px
-	width: 0px
-	margin-top: 3px
-	border: none
-	background-color: #559933
+.noUi-handle
+	border: 1px solid #d9d9d9
+	//border-radius: 50%
+	border-radius: 3px
+	background: #fff
+.noUi-horizontal .noUi-handle-upper
+	right: -1px

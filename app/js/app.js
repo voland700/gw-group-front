@@ -120,6 +120,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+	if(document.getElementById('PriceRange')){
+		let PriceRange = document.getElementById('PriceRange');
+		const input0 = document.getElementById('input-0');
+		const input1 = document.getElementById('input-1');
+		const inputs = [input0, input1];
+
+		let priceMin = Number(input0.getAttribute('min'));
+		let priceMax = Number(input0.getAttribute('max'));
+
+		noUiSlider.create(PriceRange, {
+				start: [priceMin, priceMax],
+				connect: true,
+				priceMin,
+				range: {
+					'min': priceMin,
+					'max': priceMax
+				}
+		});
+
+		PriceRange.noUiSlider.on('update', function(values, handle){
+			inputs[handle].value = Math.round(values[handle]);
+		});
+
+		const setRangeSlider = (i, value) => {
+			let arr = [null, null];
+			arr[i] = value;
+			PriceRange.noUiSlider.set(arr);
+			};
+			inputs.forEach((el, index) => {
+			el.addEventListener('change', (e) => {
+			setRangeSlider(index, e.currentTarget.value);
+		});
+
+		});
+
+	}
+
+
 
 
 
