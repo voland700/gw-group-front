@@ -1,0 +1,61 @@
+.product_wrap
+	display: flex
+
+
+.product_img_wrap
+	width: calc(50% - 10px)
+
+.product_img_block
+	width: 100%
+	position: relative
+	margin-bottom: 15px
+	&::before
+		content: ''
+		display: block
+		padding-top: 120%
+.product_img_limk
+	display: flex
+	position: absolute
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+.product_img
+	width: auto
+	max-width: 98%
+	height: auto
+	max-height: 98%
+	margin: auto
+
+.product_gallery_wrap
+.product_gallery_link
+	display: block
+	position: relative
+	box-sizing: border-box
+	border: 1px solid $grayLight
+	border-radius: 2px
+	transition: all .3s ease-out
+	&::before
+		content: ''
+		display: block
+		padding-top: 100%
+.product_gallery_inner
+	display: block
+	position: absolute
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	overflow: hidden
+.product_gallery_img
+	width: auto
+	max-width: 98%
+	height: auto
+	max-height: 98%
+	margin: auto
+
+
+
+.product_info_wrap
+	width: 50%
+	flex-shrink: 1

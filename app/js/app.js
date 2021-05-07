@@ -157,6 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 
+	/*--products images carusl--*/
+	$(document).ready(function () {
+		$(".owl-carousel").owlCarousel();
+	});
+
 
 
 
