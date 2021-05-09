@@ -28,17 +28,55 @@
 	margin: auto
 
 .product_gallery_wrap
+	width: 100%
+	position: relative
+	margin: 0 auto
+	.owl-nav
+		display: block
+		width: 100%
+		position: absolute
+		left: 0
+		top: 30%
+		transform: translateY(-50%)
+
+	.owl-nav button.owl-prev,
+	.owl-nav button.owl-next
+		position: absolute
+		display: inline-block
+		width: 20px
+		height: 20px
+		font-size: 2em
+		line-height: 20px
+		top: 0
+
+
+
+	.owl-nav button.owl-prev
+		left: -20px
+
+	.owl-nav button.owl-next
+		right: -20px
+
+
+
+
 .product_gallery_link
 	display: block
 	position: relative
 	box-sizing: border-box
 	border: 1px solid $grayLight
+	border: 1px solid #f2f2f2
+	padding: 2px
 	border-radius: 2px
 	transition: all .3s ease-out
 	&::before
 		content: ''
 		display: block
 		padding-top: 100%
+
+	&:hover,
+	&:focus
+		background-color: #f2f2f2
 .product_gallery_inner
 	display: block
 	position: absolute

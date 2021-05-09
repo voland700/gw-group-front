@@ -159,8 +159,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	/*--products images carusl--*/
 	$(document).ready(function () {
-		$(".owl-carousel").owlCarousel();
+		$(".owl-carousel").owlCarousel({
+			items: 5,
+			//lazyLoad: true,
+			margin: 7,
+			nav: false,
+			dots: false,
+		});
 	});
+
+
+	let mainImg = document.getElementById('mainImg');
+
+	let prevLinks = document.querySelectorAll('.product_gallery_link').forEach(function(elem){
+		elem.addEventListener('click', function(item){
+			item.preventDefault();
+			let pathImg = item.target.parentNode.parentNode.getAttribute('href');
+			mainImg.setAttribute('src', pathImg);
+		});
+
+	});
+
+
+
+
+
+	//console.log(prevLinks);
+
 
 
 
