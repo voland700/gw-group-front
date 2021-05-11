@@ -25,11 +25,44 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-shopping-cart:before {
-  content: "\e900";
+.icon-down:before {
+  content: "\e90c";
+}
+.icon-up:before {
+  content: "\e910";
+}
+.icon-wallet:before {
+  content: "\e90f";
+}
+.icon-checkmark:before {
+  content: "\e903";
+}
+.icon-cheveron-down:before {
+  content: "\e904";
+}
+.icon-cheveron-left:before {
+  content: "\e906";
+}
+.icon-cheveron-right:before {
+  content: "\e907";
+}
+.icon-cheveron-up:before {
+  content: "\e908";
+}
+.icon-close:before {
+  content: "\e909";
+}
+.icon-location:before {
+  content: "\e90a";
+}
+.icon-menu1:before {
+  content: "\e90b";
 }
 .icon-shopping-cart1:before {
   content: "\e901";
+}
+.icon-shopping-cart:before {
+  content: "\e900";
 }
 .icon-home:before {
   content: "\e902";

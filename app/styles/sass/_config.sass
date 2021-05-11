@@ -49,11 +49,7 @@ $gutter: $grid-gutter-width
 		font-weight: $fweight
 		src: url($furl) format('woff2')
 
-@function max($numbers...)
-  @return m#{a}x(#{$numbers})
 
-@function min($numbers...)
-  @return m#{i}n(#{$numbers})
 
 @include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
 @include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
@@ -66,7 +62,7 @@ $gutter: $grid-gutter-width
 	color: #666
 
 ::selection
-	background-color: $accent
+	background-color: #ddd
 	color: #fff
 
 input, textarea
