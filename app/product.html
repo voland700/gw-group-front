@@ -116,7 +116,7 @@
 						</div>
 						<div class="product_price_question">
 							<span class="icon-wallet"></span>
-							<a href="/" class="product_price_question_link">Нашли дешевле?</a>
+							<a href="#" class="product_price_question_link"  data-fancybox data-src="#modalCheaper">Нашли дешевле?</a>
 						</div>
 					</div>
 
@@ -418,6 +418,58 @@
 					</form>
 					<div class="modal_fast_persondata">Нажатием кнопки «Подтвердить заказ» я даю свое согласие на обработку персональных данных в соответствии с указанными <a href="/">здесь</a> условиями.</div>
 			</div>
+
+
+
+			<div class="modal_fast" id="modalCheaper">
+				<div class="modal_fast_header">
+					<h3>Нашли дещевле?</h3>
+				</div>
+				<div class="modal_fast_info">Оставьте пожалуйста свои контактные данные.<br>
+					Наши менеджеры свяжутся с Ваи и предложат лучшие условия.
+				</div>
+					<form action="" class="modal_fast_form">
+
+						<div class="form_mw">
+							<label for="name" class="form_ml compulsory">Контактное лицо:</label>
+							<input type="text" name="name" class="form_mi" required placeholder="Иванов Иван">
+						</div>
+
+						<div class="form_mw">
+							<label for="E-mail" class="form_ml compulsory">Телефон:</label>
+							<input type="tel" name="phone" class="form_mi" id="inputPhone" required placeholder="8 985 757-89-43">
+						</div>
+
+						<div class="form_mw">
+							<label for="email" class="form_ml compulsory">E-mail</label>
+							<input type="email" name="email" class="form_mi" value="" placeholder="mail@domen.com" required pattern="/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i">
+						</div>
+
+						<div class="form_mw">
+							<label for="link" class="form_ml compulsory">Ссылка на товар другого магазина:</label>
+							<input type="text" name="link" class="form_mi" required placeholder="http://...">
+						</div>
+
+						<div class="form_mw">
+							<label for="comments" class="form_ml compulsory">Коментарий</label>
+							<textarea type="text" name="comments" class="form_mt" rows="3"></textarea>
+						</div>
+
+						<div class="modal_cart_btn_wrap">
+							<button class="modal_btn fast">Отправить</button>
+						</div>
+
+					</form>
+					<div class="modal_fast_persondata">Нажатием кнопки «Подтвердить заказ» я даю свое согласие на обработку персональных данных в соответствии с указанными <a href="/">здесь</a> условиями.</div>
+			</div>
+
+
+
+
+
+
+
+
 
 
 			<div class="prodact_recomend_wrap">
