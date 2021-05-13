@@ -131,7 +131,7 @@
 								<button type="submit" class="product_buy_btn" data-fancybox data-src="#modalCart">Купить</button>
 							</div>
 						</form>
-						<button class="product-buy-btn-fast">Быстрая покупка</button>
+						<button class="product-buy-btn-fast" data-fancybox data-src="#modalFast">Быстрая покупка</button>
 					</div><!--Buy end-->
 
 					<div class="product_perk_wrap">
@@ -380,13 +380,20 @@
 				<div class="modal_fast_info">Оставьте пожалуйста свои контактные данные.<br>
 					Наши менеджеры свяжутся с вами для уточнения деталей заказа.
 				</div>
-					<h3 class="modal_fast_title">Самаялучшая в мире печь-камин</h3>
-					<div class="modal_fast_prise"><span id="fastPrise">97798</span> руб.</div>
+					<h3 class="modal_fast_title">Самая лучшая в мире печь-камин</h3>
+
 					<form action="" class="modal_fast_form">
-						<div class="modal_counter__wrap">
-							<span class="modal_counter__btn" data-direction="minus">–</span>
-							<input type="text" name="QUANTITY" value="1" size="5" id="QUANTITY" class="modal_counter_value">
-							<span class="modal_counter__btn" data-direction="plus">+</span>
+
+						<div class="modal_counter_price_wrap">
+							<input type="hidden" name="id" value="578">
+							<input type="hidden" name="price" value="97798" id="fastPrice">
+
+							<div class="modal_counter__wrap">
+								<span class="modal_counter__btn" data-direction="minus">–</span>
+								<input type="text" name="QUANTITY" value="1" size="5" id="QUANTITY" class="modal_counter_value">
+								<span class="modal_counter__btn" data-direction="plus">+</span>
+							</div>
+							<div class="modal_fast_prise"><span id="fastSum">97798</span> руб.</div>
 						</div>
 
 						<div class="form_mw">
@@ -396,21 +403,177 @@
 
 						<div class="form_mw">
 							<label for="phone" class="form_ml compulsory">Телефон:</label>
-							<input type="tel" name="phone" class="form_mi" required pattern="^\d{4}-\d{3}-\d{4}$" placeholder="8 985 757-89-43">
+							<input type="tel" name="phone" class="form_mi" id="inputPhone" required placeholder="8 985 757-89-43">
 						</div>
 
 						<div class="form_mw">
-							<label for="comments" class="form_ml compulsory">Телефон:</label>
-							<input type="text" name="comments" class="form_mt">
+							<label for="comments" class="form_ml compulsory">Коментарий</label>
+							<textarea type="text" name="comments" class="form_mt" rows="3"></textarea>
 						</div>
 
 						<div class="modal_cart_btn_wrap">
-							<button class="modal_btn cart">Подтвердить заказ</button>
+							<button class="modal_btn fast">Подтвердить заказ</button>
 						</div>
 
 					</form>
 					<div class="modal_fast_persondata">Нажатием кнопки «Подтвердить заказ» я даю свое согласие на обработку персональных данных в соответствии с указанными <a href="/">здесь</a> условиями.</div>
 			</div>
+
+
+			<div class="prodact_recomend_wrap">
+				<h3 class="prodact_recomend_title">Рекомендуем</h3>
+				<div class="owl-carousel prodact_recomend">
+
+					<div class="recomend_item">
+						<div class="recomend_inner">
+							<a href="#" class="recomend_link">
+								<div class="recomend_lable_wpap">
+									<span class="advice_lable-advice">Советуем</span>
+									<span class="advice_lable-stock">Акция</span>
+								</div>
+								<img src="/images/src/advice/Jotul-F-3-TD-BP.jpg" alt="Product" class="recomend_img">
+							</a>
+							<h3 class="recomend_name"><a href="#" class="recomend_name_link">Чугунная дровяная печь Jotul MF 3 BP</a></h3>
+							<div class="recomend_price">75 200 руб.</div>
+							<div class="recomend_old_wrap">
+								<span class="recomend_percent">-9%</span>
+								<span class="recomend_old">91692 руб.</span>
+							</div>
+							<div class="recomend_btn_wrap">
+								<a href="/" class="btn recomend_btn">Подробнее</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="recomend_item">
+						<div class="recomend_inner">
+							<a href="#" class="recomend_link">
+								<div class="recomend_lable_wpap">
+									<span class="advice_lable-hit">Хит</span>
+									<span class="advice_lable-stock">Акция</span>
+								</div>
+								<img src="/images/src/advice/Morso-1630.jpg" alt="Product" class="recomend_img">
+							</a>
+							<h3 class="recomend_name"><a href="#" class="recomend_name_link">Чугунная печь-камин Morso 1630</a></h3>
+							<div class="recomend_price">85 500 руб.</div>
+							<div class="recomend_old_wrap">
+								<span class="recomend_percent">-15%</span>
+								<span class="recomend_old">91692 руб.</span>
+							</div>
+							<div class="recomend_btn_wrap">
+								<a href="/" class="btn recomend_btn">Подробнее</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="recomend_item">
+						<div class="recomend_inner">
+							<a href="#" class="recomend_link">
+								<div class="recomend_lable_wpap">
+									<span class="advice_lable-new">Новинка</span>
+								</div>
+								<img src="/images/src/advice/Morso-7443.jpg" alt="Product" class="recomend_img">
+							</a>
+							<h3 class="recomend_name"><a href="#" class="recomend_name_link">Дровяной чугунный камин Morso 7443</a></h3>
+							<div class="recomend_price">176 804 руб.</div>
+							<div class="recomend_old_wrap">
+
+							</div>
+							<div class="recomend_btn_wrap">
+								<a href="/" class="btn recomend_btn">Подробнее</a>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="recomend_item">
+						<div class="recomend_inner">
+							<a href="#" class="recomend_link">
+								<div class="recomend_lable_wpap">
+									<span class="advice_lable-advice">Советуем</span>
+								</div>
+								<img src="/images/src/advice/f-601-n-gd-bp.jpg" alt="Product" class="recomend_img">
+							</a>
+							<h3 class="recomend_name"><a href="#" class="recomend_name_link">Чугунная печь-камин Jotul F 602 N GD BP</a></h3>
+							<div class="recomend_price">41 900 руб.</div>
+							<div class="recomend_old_wrap">
+								<span class="recomend_percent">-10%</span>
+								<span class="recomend_old">41900 руб</span>
+							</div>
+							<div class="recomend_btn_wrap">
+								<a href="/" class="btn recomend_btn">Подробнее</a>
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="recomend_item">
+						<div class="recomend_inner">
+							<a href="#" class="recomend_link">
+								<div class="recomend_lable_wpap">
+									<span class="advice_lable-new">Новинка</span>
+								</div>
+								<img src="/images/src/advice/pot_Morso-4.jpg" alt="Product" class="recomend_img">
+							</a>
+							<h3 class="recomend_name"><a href="#" class="recomend_name_link">Чугунная кастрюля Morso с крышкой гриль - 3,1 литра</a></h3>
+							<div class="recomend_price">18 570 руб.</div>
+							<div class="recomend_old_wrap">
+
+							</div>
+							<div class="recomend_btn_wrap">
+								<a href="/" class="btn recomend_btn">Подробнее</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="recomend_item">
+						<div class="recomend_inner">
+							<a href="#" class="recomend_link">
+
+								<img src="/images/src/advice/Morso-Gas-lighter.jpg" alt="Product" class="recomend_img">
+							</a>
+							<h3 class="recomend_name"><a href="#" class="recomend_name_link">Morsø Gas lighter газовая зажигалка для печей</a></h3>
+							<div class="recomend_price">2 879 руб.</div>
+							<div class="recomend_old_wrap">
+
+							</div>
+							<div class="recomend_btn_wrap">
+								<a href="/" class="btn recomend_btn">Подробнее</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="recomend_item">
+						<div class="recomend_inner">
+							<a href="#" class="recomend_link">
+								<div class="recomend_lable_wpap">
+									<span class="advice_lable-hit">Хит</span>
+									<span class="advice_lable-stock">Акция</span>
+								</div>
+								<img src="/images/src/advice/AXE-MORSO.jpg" alt="Product" class="recomend_img">
+							</a>
+							<h3 class="recomend_name"><a href="#" class="recomend_name_link">Топор MORSO AXE</a></h3>
+							<div class="recomend_price">12 083 руб.</div>
+							<div class="recomend_old_wrap">
+								<span class="recomend_percent">-9%</span>
+								<span class="recomend_old">91692 руб.</span>
+							</div>
+							<div class="recomend_btn_wrap">
+								<a href="/" class="btn recomend_btn">Подробнее</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!--END-RECOMEND-->
+
+
+
+
+
 
 
 

@@ -212,12 +212,46 @@ document.addEventListener('DOMContentLoaded', () => {
 					inp.value = newValue;
 				})
 			})
-
-			console.log(btns);
-
 		}
 		counter();
 
+		/*--product fast buy quntity counter--*/
+
+		if(document.getElementById('modalFast')){
+
+			const fastCounter = function () {
+				const btns = document.querySelectorAll('.modal_counter__btn');
+				let fastPrice = document.getElementById('fastPrice');
+				let price = Number(fastPrice.getAttribute('value'));
+				const fastSum = document.getElementById('fastSum');
+				let sum = 0;
+
+				let cleave = new Cleave('#inputPhone', {
+    			phone: true,
+    			phoneRegionCode: 'ru'
+				});
+
+				btns.forEach(btn => {
+					btn.addEventListener('click', function () {
+						const direction = this.dataset.direction;
+						const inp = this.parentElement.querySelector('.modal_counter_value');
+						const currentValue = +inp.value;
+						let newValue;
+						if (direction === 'plus') {
+							newValue = currentValue + 1;
+							sum = price*newValue;
+							fastSum.textContent = sum.toLocaleString('ru-RU');
+						} else {
+							newValue = currentValue - 1 > 1 ? currentValue - 1 : 1;
+							sum = price*newValue;
+							fastSum.textContent = sum.toLocaleString('ru-RU');
+						}
+						inp.value = newValue;
+					})
+				})
+			}
+			fastCounter();
+		}
 
 		/*--tabs--*/
 		document.querySelectorAll('.product_control_item').forEach(function (elem) {
@@ -262,18 +296,39 @@ document.addEventListener('DOMContentLoaded', () => {
 						document.querySelectorAll('.product_tab_mob').forEach(function(item){
 							if(item.classList.contains('active')) item.classList.remove('active');
 						});
-
-
 						neighbourTab.classList.add('behold');
 						elemSelected.querySelector('span').classList.toggle('icon-down');
 						elemSelected.querySelector('span').classList.toggle('icon-up');
 						elemSelected.classList.add('active');
-
 					}
 					//console.log(document.querySelectorAll('.product_tab_mob > span'));
 				});
 			}
 		});
+
+		/*--recomend products carousel--*/
+		$('.prodact_recomend').owlCarousel({
+			loop: true,
+			//margin: 10,
+			nav: true,
+			dots: false,
+			lazyLoad: true,
+			navContainerClass: 'dejavu-owl-nav',
+			responsive: {
+				0: {
+					items: 1
+				},
+				400: {
+					items: 2
+				},
+				600: {
+					items: 3
+				},
+				1100: {
+					items: 4
+				}
+			}
+		})
 
 
 
