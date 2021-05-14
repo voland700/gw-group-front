@@ -101,10 +101,41 @@
 							<img src="/images/src/brends/etna.png" alt="LOGO" class="product_info_brend-img">
 						</a>
 					</div>
+<script>
+				let smoothScrollTo = (function () {
+					let timer, start, factor;
 
+					return function (target, duration) {
+						let offset = window.pageYOffset,
+							delta = target - window.pageYOffset; // Y-offset difference
+						duration = duration || 500;              // default 1 sec animation
+						start = Date.now();                       // get start time
+						factor = 0;
+
+						if (timer) {
+							clearInterval(timer); // stop any running animation
+						}
+
+						function step() {
+							let y;
+							factor = (Date.now() - start) / duration; // get interpolation factor
+							if (factor >= 1) {
+								clearInterval(timer); // stop animation
+								factor = 1;           // clip to max 1.0
+							}
+							y = factor * delta + offset;
+							window.scrollBy(0, y - window.pageYOffset);
+						}
+
+						timer = setInterval(step, 10);
+						return timer; // return the interval timer, so you can clear it elsewhere
+					};
+				}());
+</script>
 					<div class="product_info_prev">
 						<p>Краткое описание самой лучшой в мире печи для отопления дома и дачи. Печь-камин очень длительного горения...</p>
-						<a href="#description" class="product_info_prev-link">Подробнее<span class="icon-cheveron-down"></span></a>
+						<a href="#" class="product_info_prev-link"
+						 onclick="smoothScrollTo(document.getElementById('controlPanel').offsetTop)">Подробнее<span class="icon-cheveron-down"></span></a>
 					</div>
 
 					<div class="product_price_wrap">
@@ -160,9 +191,7 @@
 				</div>
 			</div>
 
-
-
-			<div class="product_control_wrap">
+			<div class="product_control_wrap" id="controlPanel">
 				<ul class="product_control_list">
 					<li class="product_control_item  active" data-name="discrip"><span>Описание</span></li>
 					<li class="product_control_item" data-name="property"><span>Характеристики</span></li>
@@ -426,7 +455,7 @@
 					<h3>Нашли дещевле?</h3>
 				</div>
 				<div class="modal_fast_info">Оставьте пожалуйста свои контактные данные.<br>
-					Наши менеджеры свяжутся с Ваи и предложат лучшие условия.
+					Наши менеджеры свяжутся с Вами и предложат лучшие условия.
 				</div>
 					<form action="" class="modal_fast_form">
 
@@ -436,13 +465,13 @@
 						</div>
 
 						<div class="form_mw">
-							<label for="E-mail" class="form_ml compulsory">Телефон:</label>
-							<input type="tel" name="phone" class="form_mi" id="inputPhone" required placeholder="8 985 757-89-43">
+							<label for="inputPhoneMask" class="form_ml compulsory">Телефон:</label>
+							<input type="tel" name="phone" class="form_mi" id="inputPhoneMask" required placeholder="8 985 757-89-43">
 						</div>
 
 						<div class="form_mw">
 							<label for="email" class="form_ml compulsory">E-mail</label>
-							<input type="email" name="email" class="form_mi" value="" placeholder="mail@domen.com" required pattern="/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i">
+							<input type="email" name="email" class="form_mi" value="" placeholder="mail@domen.com" required>
 						</div>
 
 						<div class="form_mw">
@@ -451,7 +480,7 @@
 						</div>
 
 						<div class="form_mw">
-							<label for="comments" class="form_ml compulsory">Коментарий</label>
+							<label for="comments" class="form_ml">Коментарий</label>
 							<textarea type="text" name="comments" class="form_mt" rows="3"></textarea>
 						</div>
 

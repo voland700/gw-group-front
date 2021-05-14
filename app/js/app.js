@@ -216,9 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		counter();
 
 		/*--product fast buy quntity counter--*/
-
 		if(document.getElementById('modalFast')){
-
 			const fastCounter = function () {
 				const btns = document.querySelectorAll('.modal_counter__btn');
 				let fastPrice = document.getElementById('fastPrice');
@@ -252,6 +250,45 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 			fastCounter();
 		}
+
+		/*--form: Did you found it more cheaper?--*/
+		if(document.getElementById('inputPhoneMask')){
+			let cleave2 = new Cleave('#inputPhoneMask', {
+    			phone: true,
+    			phoneRegionCode: 'ru'
+				});
+		}
+
+		/*-- link move to description --*/
+		let smoothScrollTo = (function () {
+			let timer, start, factor;
+
+			return function (target, duration) {
+				let offset = window.pageYOffset,
+						delta  = target - window.pageYOffset; // Y-offset difference
+				duration = duration || 1000;              // default 1 sec animation
+				start = Date.now();                       // get start time
+				factor = 0;
+
+				if( timer ) {
+					clearInterval(timer); // stop any running animation
+				}
+
+				function step() {
+					let y;
+					factor = (Date.now() - start) / duration; // get interpolation factor
+					if( factor >= 1 ) {
+						clearInterval(timer); // stop animation
+						factor = 1;           // clip to max 1.0
+					}
+					y = factor * delta + offset;
+					window.scrollBy(0, y - window.pageYOffset);
+				}
+
+				timer = setInterval(step, 10);
+				return timer; // return the interval timer, so you can clear it elsewhere
+			};
+		}());
 
 		/*--tabs--*/
 		document.querySelectorAll('.product_control_item').forEach(function (elem) {
@@ -341,12 +378,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
 })
+
+
+
+
+$(document).ready(function() {
+/*
+			let smoothScrollTo = (function () {
+				let timer, start, factor;
+
+				return function (target, duration) {
+					let offset = window.pageYOffset,
+						delta = target - window.pageYOffset; // Y-offset difference
+					duration = duration || 500;              // default 1 sec animation
+					start = Date.now();                       // get start time
+					factor = 0;
+
+					if (timer) {
+						clearInterval(timer); // stop any running animation
+					}
+
+					function step() {
+						let y;
+						factor = (Date.now() - start) / duration; // get interpolation factor
+						if (factor >= 1) {
+							clearInterval(timer); // stop animation
+							factor = 1;           // clip to max 1.0
+						}
+						y = factor * delta + offset;
+						window.scrollBy(0, y - window.pageYOffset);
+					}
+
+					timer = setInterval(step, 10);
+					return timer; // return the interval timer, so you can clear it elsewhere
+				};
+			}());
+
+*/
+});

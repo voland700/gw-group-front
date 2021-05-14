@@ -144,7 +144,17 @@
 	display: block
 	font-size: .95em
 	margin-bottom: 0
-.compulsory
+.form_ml.compulsory
+	display: inline-block
+	position: relative
+	&::after
+		content: '*'
+		position: absolute
+		top: -1px
+		right: -9px
+		//font-size: 1.1em
+		//font-weight: 600
+		color: red
 .form_mi
 	width: 100%
 	overflow: hidden
